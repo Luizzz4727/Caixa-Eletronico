@@ -2,7 +2,7 @@
 	Name: CaixaRecursivo.cpp
 	Author: luiz.ribeiro
 	Date: 06/11/20 15:36
-	Description: Programa que faz operaÁıes de um caixa eletrÙnico usando funÁıes recursivas.
+	Description: Programa que faz opera√ß√µes de um caixa eletr√¥nico usando fun√ß√µes recursivas.
 */
 
 
@@ -10,11 +10,9 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <windows.h>
-#include <locale.h> // Arquivo que possibilita a localizaÁ„o de programas.
+#include <locale.h> // Arquivo que possibilita a localiza√ß√£o de programas.
 
-//Sess„o de PrototipaÁ„o
-//void validarNumConta(int)
-//void validarSenha(int);
+//Sess√£o de Prototipa√ß√£o
 void menuOperacoes();
 void deposito();
 void saque();
@@ -23,7 +21,7 @@ void trocaSenha();
 int validarNumConta();
 int validarSenha(int);
 
-//Vari·veis globais
+//Vari√°veis globais
 float dadosContas[5][3];
 int erros[5];
 
@@ -34,7 +32,7 @@ int erros[5];
 
 main()
 {
-	//DeclaraÁ„o de vari·veis
+	//Declara√ß√£o de vari√°veis
 	
 	dadosContas[0][0] = 21659;
 	dadosContas[0][1] = 0.00;
@@ -60,9 +58,9 @@ main()
 		erros[i] = 3;
 	
 	
-	//INÕCIO
-	setlocale(LC_ALL,""); // Configura a localidade do programa para a localidade padr„o do sistema operacional, assim, nesse caso, possibilitando o uso de acentos da lÌngua portuguesa.
-	//Inicializando Vari·veis
+	//IN√çCIO
+	setlocale(LC_ALL,""); // Configura a localidade do programa para a localidade padr√£o do sistema operacional, assim, nesse caso, possibilitando o uso de acentos da l√≠ngua portuguesa.
+	//Inicializando Vari√°veis
 	
 	//Desenvolvimento do Algoritmo
 	
@@ -71,15 +69,15 @@ main()
 	
 }//Fim
 
-// FunÁıes
+// Fun√ß√µes
 
 void menuOperacoes()
 {
 	
 	int escolha = 0;
 	printf("===================================\n"
-		   "Qual operaÁ„o abaixo deseja fazer?\n\n"
-		   "1 - DepÛsito\n"
+		   "Qual opera√ß√£o abaixo deseja fazer?\n\n"
+		   "1 - Dep√≥sito\n"
 		   "2 - Saque\n"
 		   "3 - Saldo\n"
 		   "4 - Troca de Senha\n"
@@ -105,8 +103,8 @@ void menuOperacoes()
 		case 0: exit(0);
 				break;
 			
-		default: printf("VocÍ digitou uma opÁ„o inexistente!\n"
-						"Aguarde e escolha uma opÁ„o v·lida.");
+		default: printf("Voc√™ digitou uma op√ß√£o inexistente!\n"
+						"Aguarde e escolha uma op√ß√£o v√°lida.");
 				 Sleep(4000);
 				 system("cls");
 				 menuOperacoes();
@@ -121,9 +119,9 @@ void deposito()
 	system("cls");
 	float numConta = 0.0, valor = 0.0;
 	printf("==============================================\n\n"
-		   "VocÍ escolheu a operaÁ„o de DEP”SITO!!\n\n"
-		   "Digite o n˙mero da conta para depÛsito: "); scanf("%f", &numConta);
-	printf("\nDigite o valor do depÛsito: "); scanf("%f", &valor);
+		   "Voc√™ escolheu a opera√ß√£o de DEP√ìSITO!!\n\n"
+		   "Digite o n√∫mero da conta para dep√≥sito: "); scanf("%f", &numConta);
+	printf("\nDigite o valor do dep√≥sito: "); scanf("%f", &valor);
 	
  	for(int i = 0; i < 5; i++)
 	{
@@ -131,7 +129,7 @@ void deposito()
 	 	if(dadosContas[i][0] == numConta)
 	 	{
 			dadosContas[i][1] =  dadosContas[i][1] + valor;
-			printf("\nSeu depÛsito foi realizado com sucesso!!!\n"
+			printf("\nSeu dep√≥sito foi realizado com sucesso!!!\n"
 				   "Finalizando...\n\n"
 				   "==============================================");
 			
@@ -141,7 +139,7 @@ void deposito()
 		}			
 	}
 	
-	printf("\nSeu depÛsito foi realizado com sucesso!!!\n"
+	printf("\nSeu dep√≥sito foi realizado com sucesso!!!\n"
 		   "Finalizando...\n\n"
 		   "==============================================");
 	Sleep(5000);
@@ -157,7 +155,7 @@ void saque()
 	float valor;
 	system("cls");
 	printf("========================================\n\n"
-		   "VocÍ escolheu a operaÁ„o de SAQUE!!\n");
+		   "Voc√™ escolheu a opera√ß√£o de SAQUE!!\n");
 	
 	i = validarNumConta();
 	
@@ -179,7 +177,7 @@ void saque()
 	else
 	{
 
-		printf("\nVocÍ n„o possui saldo suficiente para realizar um saque dessa quantia!!\n"
+		printf("\nVoc√™ n√£o possui saldo suficiente para realizar um saque dessa quantia!!\n"
 			   "Por favor, verifique seu saldo!\n"
 			   "Finalizando...\n\n"
 		  	   "========================================");
@@ -197,17 +195,17 @@ void saldo()
 	int i = 0, exit;
 	system("cls");
 	printf("========================================\n\n"
-		   "VocÍ escolheu a operaÁ„o de SALDO!!\n");
+		   "Voc√™ escolheu a opera√ß√£o de SALDO!!\n");
 	
 	i = validarNumConta();
 	
 	printf("======================================\n\n"
-		   "Seu saldo È: %.2f\n\n"
+		   "Seu saldo √©: %.2f\n\n"
 		   "Digite 0 para sair: ", dadosContas[i][1]); scanf("%d", &exit);
 	
 	if(exit == 0)
 	{
-		printf("\nRetornando ao menu de operaÁıes..."
+		printf("\nRetornando ao menu de opera√ß√µes..."
 			   "\n\n======================================");
 		Sleep(2000);
 		system("cls");
@@ -223,7 +221,7 @@ void trocaSenha()
 	float senhaAtual = 0.0, senhaNova = 0.0, confirmaSenhaNova = 0.0;
 	system("cls");
 	printf("========================================\n\n"
-		   "VocÍ escolheu a operaÁ„o de TROCA DE SENHA!!\n");
+		   "Voc√™ escolheu a opera√ß√£o de TROCA DE SENHA!!\n");
 	
 	i = validarNumConta();
 	
@@ -235,8 +233,8 @@ void trocaSenha()
 	if(dadosContas[i][2] != senhaAtual)
 	{
 		
-		printf("\n\nA sua senha atual n„o est· correta!\n"
-			   "Por seguranÁa, recomece!"
+		printf("\n\nA sua senha atual n√£o est√° correta!\n"
+			   "Por seguran√ßa, recomece!"
 			   "\n\n======================================");
 		Sleep(4000);
 		system("cls");
@@ -246,8 +244,8 @@ void trocaSenha()
 	else if(senhaNova != confirmaSenhaNova)
 	{
 		
-		printf("\n\nA sua nova senha n„o est· coincidindo com a confirmaÁ„o digitada!\n"
-			   "Por seguranÁa, recomece!"
+		printf("\n\nA sua nova senha n√£o est√° coincidindo com a confirma√ß√£o digitada!\n"
+			   "Por seguran√ßa, recomece!"
 			   "\n\n======================================");
 		Sleep(4000);
 		system("cls");
@@ -259,7 +257,7 @@ void trocaSenha()
 		
 		dadosContas[i][2] = senhaNova;
 		printf("\n\nTroca de senha realizada com sucesso!!\n"
-			   "Encerrando operaÁ„o!..."
+			   "Encerrando opera√ß√£o!..."
 			   "\n\n======================================");
 		Sleep(3000);
 		system("cls");
@@ -273,7 +271,7 @@ int validarNumConta()
 {
 	
 	float numConta = 0.0;
-	printf("\nDigite o n˙mero da sua conta: "); scanf("%f", &numConta);
+	printf("\nDigite o n√∫mero da sua conta: "); scanf("%f", &numConta);
 	
 	for(int i = 0; i < 5; i++)
 	{	
@@ -282,7 +280,7 @@ int validarNumConta()
 	 			return i;		 					
 	}
 	
-	printf("\nO n˙mero da conta n„o existe!\n");	
+	printf("\nO n√∫mero da conta n√£o existe!\n");	
 	validarNumConta();
 	
 }
@@ -293,8 +291,8 @@ int validarSenha(int i)
 	float senha = 0.0;
 	if(erros[i] == 0)
 	{
-		puts("\nEssa conta est· bloqueada!!\n"
-			 "Sua operaÁ„o se encerrar·!"
+		puts("\nEssa conta est√° bloqueada!!\n"
+			 "Sua opera√ß√£o se encerrar√°!"
 			 "\n\n========================================");
 		Sleep(4000);
 		system("cls");
@@ -319,16 +317,16 @@ int validarSenha(int i)
 			
 			switch(erros[i])
 			{	
-				case 2: puts("\nVocÍ tÍm 2 tentativas!!");
+				case 2: puts("\nVoc√™ t√™m 2 tentativas!!");
 						validarSenha(i);
 						break;
 				
-				case 1: puts("\n… sua ˙ltima tentativa!!");
+				case 1: puts("\n√â sua √∫ltima tentativa!!");
 						validarSenha(i);
 						break;
 						
 				case 0: puts("\nAcesso Bloqueado!!\n"
-							 "Sua operaÁ„o se encerrar·!"
+							 "Sua opera√ß√£o se encerrar√°!"
 							 "\n\n========================================");
 						Sleep(4000);
 						system("cls");
