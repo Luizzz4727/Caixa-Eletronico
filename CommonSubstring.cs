@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-class Result
+class solutions
 {
     /*
      * Complete the 'commonSubstring' function below.
@@ -48,22 +48,26 @@ class Solution
 {
     public static void Main(string[] args)
     {
-        int n = Convert.ToInt32(Console.ReadLine().Trim());
+        int aCount = Convert.ToInt32(Console.ReadLine().Trim());
 
         List<string> a = new List<string>();
-        for (int i = 0; i < n; i++)
+
+        for (int i = 0; i < aCount; i++)
         {
-            a.Add(Console.ReadLine());
+            string aItem = Console.ReadLine();
+            a.Add(aItem);
         }
 
-        int m = Convert.ToInt32(Console.ReadLine().Trim());
+        int bCount = Convert.ToInt32(Console.ReadLine().Trim());
 
         List<string> b = new List<string>();
-        for (int i = 0; i < m; i++)
+
+        for (int i = 0; i < bCount; i++)
         {
-            b.Add(Console.ReadLine());
+            string bItem = Console.ReadLine();
+            b.Add(bItem);
         }
 
-        Result.commonSubstring(a, b);
+        solutions.commonSubstring(a, b);
     }
 }
